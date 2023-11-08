@@ -111,7 +111,7 @@ if(isset($_POST['update'])){
             <!-- ============================================================== -->
             <footer class="footer text-center">
                 All Rights Reserved. Designed and Developed by <a
-                    href="https://wa.me/+2348120188577">Phitenxt</a>.
+                    href="https://wa.me/+2348120188577">Venorteam</a>.
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
