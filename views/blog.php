@@ -31,7 +31,7 @@ HEADER
 				echo "
 					<div class='col-md-6 col-lg-4'>
 						<div class='card'>
-							<img class='img-card-top' src='../assets/img/blogimages/$row_blog[image]'>
+							<img class='img-card-top' style='height:55px;' src='../assets/img/blogimages/$row_blog[image]'>
 							<strong class='d-inline-block mb-2 text-success' style='text-align:center;'>$row_blog[category]</strong>
 							<div class='card-body'>
 								<a href='#'>
