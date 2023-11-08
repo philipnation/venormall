@@ -24,7 +24,7 @@ if(isset($_POST['update'])){
             if ($filesize<5000000000){
                 $rand = rand(100000, 9999999);
                 $filenamenew=$rand.".".$fileactualext;
-                $filedestination='../assets/img/'.$filenamenew;
+                $filedestination='../assets/img/blogimages/'.$filenamenew;
                 move_uploaded_file($filetmpname, $filedestination);
                 $sql = "INSERT INTO blogs(title,message,image,category,date)VALUES('$name','$details','$filenamenew','$category','$date')";
                 $result = mysqli_query($conn, $sql);

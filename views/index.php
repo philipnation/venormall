@@ -481,6 +481,7 @@ HEADER
 							<div class='card-body'>
 								<a href='#'>
 								<h5 class='card-title text-dark'>$row_blog[title]</h5>
+								<p class='small'>$row_blog[message]</p>
 								<span class='card-text text-muted'>
 								Posted on $row_blog[date] </span>
 								</a>

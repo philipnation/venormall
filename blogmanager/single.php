@@ -12,7 +12,7 @@ if(isset($_POST['update'])){
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $details = mysqli_real_escape_string($conn, $_POST['details']);
     $image = mysqli_real_escape_string($conn, $_POST['image']);
-    $sql = "UPDATE blogs SET title='$name', message='$details', image='$image' WHERE id='$id'";
+    $sql = "UPDATE blogs SET title='$name', message='$details' WHERE id='$id'";
     $result = mysqli_query($conn, $sql);
     if($result){
         echo "<script>location.href = 'index.php'</script>";
@@ -60,13 +60,6 @@ if(isset($_POST['update'])){
                                         <div class="col-md-12">
                                             <textarea type="text" name="details"
                                                 class="form-control form-control-line"><?php echo $row['message'] ?></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group" style="display: none;">
-                                        <label class="col-md-12">Image</label>
-                                        <div class="col-md-12">
-                                            <input type="file" name="image" value="<?php echo $row['image'] ?>"
-                                                class="form-control form-control-line">
                                         </div>
                                     </div>
                                     <div class="form-group">
