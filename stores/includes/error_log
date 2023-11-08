@@ -1,0 +1,10 @@
+[15-Oct-2023 03:57:30 UTC] PHP Warning:  Undefined variable $image in /home/energych/public_html/venormall/stores/includes/placeorder.php on line 28
+[15-Oct-2023 03:57:30 UTC] PHP Warning:  Undefined variable $unitprice in /home/energych/public_html/venormall/stores/includes/placeorder.php on line 29
+[15-Oct-2023 03:57:30 UTC] PHP Warning:  Undefined variable $quantity in /home/energych/public_html/venormall/stores/includes/placeorder.php on line 30
+[15-Oct-2023 03:57:30 UTC] PHP Warning:  Undefined variable $name in /home/energych/public_html/venormall/stores/includes/placeorder.php on line 31
+[15-Oct-2023 03:57:30 UTC] PHP Warning:  Undefined variable $price in /home/energych/public_html/venormall/stores/includes/placeorder.php on line 32
+[30-Oct-2023 14:02:05 UTC] PHP Warning:  Undefined variable $image in /home/energych/public_html/venormall/stores/includes/placeorder.php on line 28
+[30-Oct-2023 14:02:05 UTC] PHP Warning:  Undefined variable $unitprice in /home/energych/public_html/venormall/stores/includes/placeorder.php on line 29
+[30-Oct-2023 14:02:05 UTC] PHP Warning:  Undefined variable $quantity in /home/energych/public_html/venormall/stores/includes/placeorder.php on line 30
+[30-Oct-2023 14:02:05 UTC] PHP Warning:  Undefined variable $name in /home/energych/public_html/venormall/stores/includes/placeorder.php on line 31
+[30-Oct-2023 14:02:05 UTC] PHP Warning:  Undefined variable $price in /home/energych/public_html/venormall/stores/includes/placeorder.php on line 32
