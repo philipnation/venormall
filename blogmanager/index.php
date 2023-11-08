@@ -70,6 +70,10 @@ include("header.php");
                                         <?php
                                         $sql = "SELECT * FROM blogs";
                                         $result = mysqli_query($conn, $sql);
+                                        if (!$result) {
+                                            # code...
+                                            echo mysqli_error($conn);
+                                        }
                                         $i = 0;
                                         while($row = mysqli_fetch_assoc($result)){
                                             $i++;

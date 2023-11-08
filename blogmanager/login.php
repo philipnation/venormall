@@ -1,8 +1,10 @@
 <?php
-include("./handlers/conn.php");
+//include("../handlers/conn.php");
 if(isset($_POST['update'])){
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    // $username = mysqli_real_escape_string($conn, $_POST['username']);
+    // $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $username = $_POST['username'];
+    $password = $_POST['password'];
     if($username == "venorblog" && $password == "venorblog"){
         session_start();
         $_SESSION['name'] = $username;
