@@ -470,9 +470,23 @@ HEADER
 	<div class="row gap-y">
 		<?php
 		include("handlers/conn.php");
+		function getFirst22Words($sentence) {
+			// Split the sentence into an array of words
+			$words = explode(' ', $sentence);
+		
+			// Get the first 22 words using array_slice and join them back into a string
+			$result = implode(' ', array_slice($words, 0, 20));
+		
+			return $result;
+		}
+		function removespace($sentence) {
+            return str_replace(' ', '_', $sentence);
+        }
 		$blog_result = mysqli_query($conn,"SELECT * FROM blogs WHERE status = 'sent'");
 		if (mysqli_num_rows($blog_result)>0){
 			while ($row_blog = mysqli_fetch_assoc($blog_result)) {
+				$message = getFirst22Words($row_blog['message']);
+				$nospacelink = removespace($row_blog['title']);
 				echo "
 					<div class='col-md-6 col-lg-4'>
 						<div class='card'>
@@ -481,9 +495,12 @@ HEADER
 							<div class='card-body'>
 								<a href='#'>
 								<h5 class='card-title text-dark'>$row_blog[title]</h5>
-								<p class='small'>$row_blog[message]</p>
+								<p class='small'>$message</p>
 								<span class='card-text text-muted'>
 								Posted on $row_blog[date] </span>
+								</a>
+								<a href='blog/post-$nospacelink'>
+									<p class='small'>Continue Reading</p>
 								</a>
 							</div>
 						</div>
