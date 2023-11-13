@@ -26,7 +26,7 @@ function resetlink($email){
             session_start();
             $_SESSION['reset'] = resetcode();
             $_SESSION['email'] = $email;
-            $_SESSION['reset'] = $row['phone_number'];
+            $_SESSION['phone'] = $row['phone_number'];
             echo "A reset link has been sent to your email. Check your inbox.";
             include("resetmaillink.php");
             //echo "https://venormall.com/reset?reset=$_SESSION[reset]";
