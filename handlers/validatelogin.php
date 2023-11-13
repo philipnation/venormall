@@ -12,6 +12,7 @@ function validatelogin($email, $password){
         session_start();
         $_SESSION['id'] = $row['userid'];
         $_SESSION['email'] = $row['email'];
+        $_SESSION['phone'] = $row['phone_number'];
         if($row['active'] == 0){
             $code = rand(11111, 999999);
             $_SESSION['otp'] = $code;
