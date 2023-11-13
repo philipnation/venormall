@@ -1,6 +1,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+/*
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -181,6 +182,7 @@ $mail->Body = '
                 //echo 'Message could not be sent.';
                 //echo 'Mailer Error: ' . $mail->ErrorInfo;
             } else {}
+*/
 
 require_once ('../vendor/autoload.php'); // if you use Composer
 //require_once('ultramsg.class.php'); // if you download ultramsg.class.php

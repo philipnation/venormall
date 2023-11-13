@@ -27,7 +27,7 @@ function resetlink($email){
             $_SESSION['reset'] = resetcode();
             $_SESSION['email'] = $email;
             $_SESSION['phone'] = $row['phone_number'];
-            echo "A reset link has been sent to your email. Check your inbox.";
+            echo "A reset link has been sent to your whatsapp. Check your Whastapp DM.";
             include("resetmaillink.php");
             //echo "https://venormall.com/reset?reset=$_SESSION[reset]";
         }

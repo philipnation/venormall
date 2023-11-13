@@ -1,6 +1,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+/*
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -183,3 +184,17 @@ $mail->Body = '
                 //echo 'Message could not be sent.';
                 //echo 'Mailer Error: ' . $mail->ErrorInfo;
             } else {}
+*/
+require_once ('../vendor/autoload.php'); // if you use Composer
+//require_once('ultramsg.class.php'); // if you download ultramsg.class.php
+
+$ultramsg_token="xj2mrzv2rpek300f"; // Ultramsg.com token
+$instance_id="instance68439"; // Ultramsg.com instance id
+$client = new UltraMsg\WhatsAppApi($ultramsg_token,$instance_id);
+
+$to="$_SESSION[phone]";
+$body="Venormall: Your OTP is $_SESSION[otp]
+
+    Do not share this OTP with anyone."; 
+$api=$client->sendChatMessage($to,$body);
+//print_r($api);
