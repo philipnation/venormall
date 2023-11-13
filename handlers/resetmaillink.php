@@ -181,3 +181,18 @@ $mail->Body = '
                 //echo 'Message could not be sent.';
                 //echo 'Mailer Error: ' . $mail->ErrorInfo;
             } else {}
+
+require_once ('../vendor/autoload.php'); // if you use Composer
+//require_once('ultramsg.class.php'); // if you download ultramsg.class.php
+
+$ultramsg_token="xj2mrzv2rpek300f"; // Ultramsg.com token
+$instance_id="instance68439"; // Ultramsg.com instance id
+$client = new UltraMsg\WhatsAppApi($ultramsg_token,$instance_id);
+
+$to="$_SESSION[phone]";
+$body="https://venormall.com/reset?reset=$_SESSION[reset]
+    For security reasons and in line with our verification protocols, 
+    please ensure that the Reset email received is verified on the same device the reset mail was delivered to. 
+    This step is crucial in maintaining the integrity of the verification process and ensuring the security of your account."; 
+$api=$client->sendChatMessage($to,$body);
+//print_r($api);

@@ -22,6 +22,7 @@ class ComposerStaticInit2bd709d2d9f76beb048129459e40d904
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'UltraMsg\\WhatsAppApi' => __DIR__ . '/..' . '/ultramsg/whatsapp-php-sdk/ultramsg.class.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

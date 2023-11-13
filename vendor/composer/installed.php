@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => '__root__',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => '48e02f859bf78363fa0dac04919e2ef908f420f5',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '48e02f859bf78363fa0dac04919e2ef908f420f5',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -25,6 +25,15 @@
             'reference' => '896665e293689d68de4b1e9813a2e0b00a06f5ef',
             'type' => 'library',
             'install_path' => __DIR__ . '/../orhanerday/open-ai',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'ultramsg/whatsapp-php-sdk' => array(
+            'pretty_version' => '2.0.8',
+            'version' => '2.0.8.0',
+            'reference' => 'a1234da23bda1b4094dfadf221c6fd41a11416ec',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../ultramsg/whatsapp-php-sdk',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

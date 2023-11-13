@@ -1,5 +1,6 @@
 {
     "require": {
-        "orhanerday/open-ai": "^4.8"
+        "orhanerday/open-ai": "^4.8",
+        "ultramsg/whatsapp-php-sdk": "^2.0"
     }
 }
