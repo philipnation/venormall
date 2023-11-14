@@ -44,7 +44,7 @@ NAVBAR
 			<div class="border rounded p-5">
                 <div class="alert alert-danger" role="alert" id="notificationbody" style="display: none;">
                     <i class="fas fa-bullhorn"></i> <span id="notification"></span> <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">×</span>
+                    <!--<span aria-hidden="true">×</span>-->
                     </button>
                 </div>
 				<h3 class="mb-4 text-center">store details</h3>
@@ -52,6 +52,8 @@ NAVBAR
                 <script>
                 $(document).ready(function() {
                   $('#loadContentButton').click(function() {
+                    const btn_login = document.getElementById("loadContentButton")
+                    btn_login.innerHTML = "<div class='custom-loader'></div>"
                       var storename = $("#storename").val();
                       var storeabout = $("#storeabout").val();
                       var storedescription = $("#storedescription").val();
@@ -66,6 +68,9 @@ NAVBAR
                             location.href = 'login';
                           }
                           else{
+                            setTimeout(function(){
+                                btn_login.innerHTML = "Register"
+                            },500)
                             const notificationbody = document.querySelector("#notificationbody")
                             const notification = document.querySelector("#notification")
                             notificationbody.style.display = 'block'

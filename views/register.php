@@ -30,7 +30,19 @@ else{
     
 <!-- Animation CSS -->
 <link href="./assets/css/vendor/aos.css" rel="stylesheet"/>
-    
+<style>
+	.custom-loader {
+		margin: auto;
+		width:25px;
+		height:25px;
+		border-radius:50%;
+		border:5px solid;
+		border-color:#000000;
+		border-right-color: #FFFFFF;
+		animation:s2 0.5s infinite linear;
+	}
+		@keyframes s2 {to{transform: rotate(1turn)}}
+</style>
 </head>
     
 <body id="body"> 
@@ -79,6 +91,8 @@ NAVBAR
   <script>
   $(document).ready(function() {
 	$('#loadContentButton').click(function() {
+		const btn_login = document.getElementById("loadContentButton")
+        btn_login.innerHTML = "<div class='custom-loader'></div>"
 		var name = $("#name").val();
 		var business_name = $("#businessname").val();
 		var email = $("#email").val();
@@ -111,6 +125,9 @@ NAVBAR
 				});
 			}
 			else{
+				setTimeout(function(){
+					btn_login.innerHTML = "Next"
+				},500)
 				const notificationbody = document.querySelector("#notificationbody")
 				const notification = document.querySelector("#notification")
 				notificationbody.style.display = 'block'
@@ -127,7 +144,7 @@ NAVBAR
 			<div class="border rounded p-5">
 			<div class="alert alert-danger" role="alert" id="notificationbody" style="display: none;">
 				<i class="fas fa-bullhorn"></i> <span id="notification"></span> <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">×</span>
+				<!--<span aria-hidden="true">×</span>-->
 				</button>
 			</div>
 				<h3 class="mb-4 text-center">register</h3>
