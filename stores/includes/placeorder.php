@@ -53,6 +53,36 @@ while($selling_row = mysqli_fetch_assoc($selling_result)){
         $sql = "INSERT INTO orders(userid, ordername,firstname,lastname,country,state,city,street_address,phone_number,product_name,product_image,product_price,product_quantity_total,product_quantity,order_total, payment_method,email,delivery_note,date,action,order_date,selling_price,delivery_fee)
         VALUES('$_SESSION[userid]','$ordername','$firstname', '$lastname', '$country', '$state', '$city', '$address', '$phone', '$name', '$image', '$unitprice', '$price', '$quantity','$total_price', '$payment_method','$email','$note','$date','pending','$chartdate','$selling_price','$_SESSION[delivery_fee]')";
         $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+        require_once ('../../vendor/autoload.php'); // if you use Composer
+        //require_once('ultramsg.class.php'); // if you download ultramsg.class.php
+        $ultramsg_token="xj2mrzv2rpek300f"; // Ultramsg.com token
+        $instance_id="instance68439"; // Ultramsg.com instance id
+        $client = new UltraMsg\WhatsAppApi($ultramsg_token,$instance_id);
+
+        $to="$_SESSION[phone]";
+        $body=" A user Just Placed an Order:
+        User Details:
+        Firstname: $firstname
+        LastName: $lastname
+        Country: $country
+        State: $state
+        City: $city
+        Address: $address
+        Phone Number: $phone
+        Email: $email
+
+        Order Details:
+        Order ID: $ordername
+        Product names/Number: $name - (NGN) $price
+        Delivery Note: $note
+        Date: $date
+        Time: $time
+        Total: NGN $total_price
+        "; 
+        $api=$client->sendChatMessage($to,$body);
+        //print_r($api);
+
+        //Send Image
         if($result){
             $_SESSION['customer_name'] = $firstname." ".$lastname;
             $_SESSION['customer_address'] = $address;
