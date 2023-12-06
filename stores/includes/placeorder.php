@@ -50,9 +50,15 @@ while($selling_row = mysqli_fetch_assoc($selling_result)){
         $image = rtrim($image, ",");
         $name = rtrim($name, ",");
         $ordername = "order".rand(10000, 9000000);
-        $sql = "INSERT INTO orders(userid, ordername,firstname,lastname,country,state,city,street_address,phone_number,product_name,product_image,product_price,product_quantity_total,product_quantity,order_total, payment_method,email,delivery_note,date,action,order_date,selling_price,delivery_fee)
-        VALUES('$_SESSION[userid]','$ordername','$firstname', '$lastname', '$country', '$state', '$city', '$address', '$phone', '$name', '$image', '$unitprice', '$price', '$quantity','$total_price', '$payment_method','$email','$note','$date','pending','$chartdate','$selling_price','$_SESSION[delivery_fee]')";
+        $sql = "INSERT INTO orders(userid,storeuserid,ordername,firstname,lastname,country,state,city,street_address,phone_number,product_name,product_image,product_price,product_quantity_total,product_quantity,order_total, payment_method,email,delivery_note,date,action,order_date,selling_price,delivery_fee)
+        VALUES('$_SESSION[userid]','$_SESSION[shopuser]','$ordername','$firstname', '$lastname', '$country', '$state', '$city', '$address', '$phone', '$name', '$image', '$unitprice', '$price', '$quantity','$total_price', '$payment_method','$email','$note','$date','pending','$chartdate','$selling_price','$_SESSION[delivery_fee]')";
         $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
+        $activitysql = "INSERT INTO storeuser_notification(userid,title,activity)
+        VALUES('$_SESSION[shopuser]','Order placed','You just placed an order of NGN $total_price')";
+        $activityresult = mysqli_query($conn, $activitysql) or die(mysqli_error($conn));
+
+
         require_once ('../../vendor/autoload.php'); // if you use Composer
         //require_once('ultramsg.class.php'); // if you download ultramsg.class.php
         $ultramsg_token="xj2mrzv2rpek300f"; // Ultramsg.com token

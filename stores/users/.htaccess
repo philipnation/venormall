@@ -1,0 +1,21 @@
+RewriteEngine on
+# This is for home
+RewriteRule ^$ index.php [L]
+RewriteRule ^home$ index.php [L]
+RewriteRule ^validate-login$ ../includes/validatelogin.php [L]
+RewriteRule ^deletebag-([0-9()]+) handle/deletebag.php?id=$1 [NC,L]
+RewriteRule ^editbag-([0-9()]+) editbag.php?id=$1 [NC,L]
+RewriteRule ^reuse-([0-9()]+) reuse.php?id=$1 [NC,L]
+RewriteRule ^delactivities$ handle/deleteallactivity.php [L]
+RewriteRule ^delnotification$ handle/deleteallnot.php [L]
+RewriteRule ^paid$ details?paid=paid [L]
+#RewriteRule ^dashboard$ index.php [L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+ErrorDocument 404 '<h1 style="text-align:center;margin-top:20rem;">NOT FOUND</h1>'
+# For requests passed in the url
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php !-f
+#RewriteRule ^product/([a-z]+) check.php?food=$1 [NC,L]
+RewriteRule ^item-([a-z_()]+) singleproduct?product=$1 [NC,L]

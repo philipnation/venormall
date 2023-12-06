@@ -3,6 +3,13 @@ include("inc/header.php");
 if(!isset($_SESSION['shopping_cart'])){
 	echo "<script>location.href = 'home'</script>";
 }
+if(!isset($_SESSION['shopuser'])){
+	echo "<script>location.href = 'users'</script>";
+}
+else{
+	$userstore_result = mysqli_query($conn,"SELECT * FROM shop_users WHERE id = '$_SESSION[shopuser]'");
+	$userstore_row = mysqli_fetch_assoc($userstore_result);
+}
 ?>
 
 
@@ -15,7 +22,7 @@ if(!isset($_SESSION['shopping_cart'])){
             <nav aria-label="breadcrumb" class="breadcrumb-nav">
                 <div class="container">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="./">Home</a></li>
                         <li class="breadcrumb-item"><a href="#">Shop</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Checkout</li>
                     </ol>
@@ -38,42 +45,42 @@ if(!isset($_SESSION['shopping_cart'])){
 		                				<div class="row">
 		                					<div class="col-sm-6">
 		                						<label>First Name *</label>
-		                						<input type="text" name="firstname" class="form-control" required>
+		                						<input type="text" name="firstname" class="form-control" value="<?php echo $userstore_row['firstname'] ?>" required>
 		                					</div><!-- End .col-sm-6 -->
 
 		                					<div class="col-sm-6">
 		                						<label>Last Name *</label>
-		                						<input type="text" name="lastname" class="form-control" required>
+		                						<input type="text" name="lastname" class="form-control" value="<?php echo $userstore_row['lastname'] ?>" required>
 		                					</div><!-- End .col-sm-6 -->
 		                				</div><!-- End .row -->
 
 	            						<label>Country *</label>
-	            						<input type="text" name="country" class="form-control" required>
+	            						<input type="text" name="country" class="form-control" value="<?php echo $userstore_row['country'] ?>" required>
 
 	            						<label>Address *</label>
-	            						<input type="text" name="address" class="form-control" placeholder="House number and Street name" required>
+	            						<input type="text" name="address" class="form-control" placeholder="House number and Street name" value="<?php echo $userstore_row['address'] ?>" required>
 
 	            						<div class="row">
 		                					<div class="col-sm-6">
 		                						<label>Town / City *</label>
-		                						<input type="text" name="city" class="form-control" required>
+		                						<input type="text" name="city" class="form-control" value="<?php echo $userstore_row['city'] ?>" required>
 		                					</div><!-- End .col-sm-6 -->
 
 		                					<div class="col-sm-6">
 		                						<label>State *</label>
-		                						<input type="text" name="state" class="form-control" required>
+		                						<input type="text" name="state" class="form-control" value="<?php echo $userstore_row['state'] ?>" required>
 		                					</div><!-- End .col-sm-6 -->
 		                				</div><!-- End .row -->
 
 		                				<div class="row">
 		                					<div class="col-sm-6">
 		                						<label>Phone *</label>
-		                						<input type="tel" name="phone" class="form-control" required>
+		                						<input type="tel" name="phone" class="form-control" value="<?php echo $userstore_row['phonenumber'] ?>" required>
 		                					</div><!-- End .col-sm-6 -->
 		                				</div><!-- End .row -->
 
 	                					<label>Email address *</label>
-	        							<input type="email" name="email" class="form-control" required>
+	        							<input type="email" name="email" class="form-control" value="<?php echo $userstore_row['email'] ?>" required>
 
 	        							<div class="custom-control custom-checkbox">
 											<input type="radio" name="payment_method" class="custom-control-input" value="Payment on delivery" id="checkout-create-acc" required checked>

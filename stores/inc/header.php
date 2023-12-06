@@ -39,6 +39,7 @@ if(mysqli_num_rows($result)>0){
         $about = $storerow['store_description'];
         $currency = "&#8358;";
         $tel = $storerow['tel'];
+        $_SESSION['phone'] = $sqlresultrow['phone_number'];
     }
 }
 else{

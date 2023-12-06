@@ -36,13 +36,20 @@ if(!isset($_SESSION['customer_name'])){
 
                 			<div class="contact-form mb-2"><!--was form-->
 								<div class="text-center">
+
                                     <button class="btn btn-outline-primary-2 btn-minwidth-sm" style="color: <?php echo $color; ?>;border-color: <?php echo $color; ?>;background-color: #fff;">
 	                					<span><a href="./" style="color: <?php echo $color; ?>;">HOME</a></span>
 	            						<i class="icon-long-arrow-left"></i>
 	                				</button>
+
 	                				<button class="btn btn-outline-primary-2 btn-minwidth-sm" onclick="printChart()" style="color: <?php echo $color; ?>;border-color: <?php echo $color; ?>;background-color: #fff;">
 	                					<span>PRINT ORDER RECEIPT</span>
 	            						<i class="icon-long-arrow-right"></i>
+	                				</button>
+
+                          <button class="btn btn-outline-primary-2 btn-minwidth-sm" style="color: <?php echo $color; ?>;border-color: <?php echo $color; ?>;background-color: #fff;">
+	                					<span><a href="users" style="color: <?php echo $color; ?>;">GO TO DASHBOARD</a></span>
+	            						<i class="icon-long-arrow-left"></i>
 	                				</button>
                 				</div><!-- End .text-center -->
                 			</div><!-- End .contact-form --><!--was/form-->

@@ -78,7 +78,7 @@ if(!isset($_SESSION['otp'])){
 <body>
   <div class="container">
     <h3>venormall</h3>
-    <h6>Please check your email inbox for the OTP that has been sent to you.</h6>
+    <h6>Please check your Whatsapp DM for the OTP sent to you.</h6>
     <div class="otp-input">
       <input type="number" maxlength="1" class="form-control form-in" id="otp1" autofocus>
       <input type="number" maxlength="1" class="form-control form-in" id="otp2">
@@ -88,7 +88,7 @@ if(!isset($_SESSION['otp'])){
       <input type="number" maxlength="1" class="form-control form-in" id="otp6">
     </div>
     <button class="btn btn-primary submit-btn" style="margin: auto;">Submit</button>
-    <p class="success-message">Success! OTP Verified.</p>
+    <p class="success-message">OTP Verified.</p>
     <p class="error-message">Invalid OTP</p>
     <p class="login-message"><a href="login">Login Again</a></p>
     <p class="otp-message"><?php echo $_SESSION['otp'] ?></p>
