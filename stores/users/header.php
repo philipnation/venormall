@@ -126,7 +126,7 @@ else{
 
             <li class="menu-header">More</li>
             <li>
-              <!-- <a href="chat"><i class="fa fa-comments" style="color :#0D0E52;"></i>AI chat <div class="badge badge-primary" style="background-color :#0D0E52;"><?php echo getmessage(); ?></div></a> -->
+              <!-- <a href="chat"><i class="fa fa-comments" style="color :#0D0E52;"></i>AI chat <div class="badge badge-primary" style="background-color :#0D0E52;"></div></a> -->
             </li>
             <li>
               <a href="logout"><i class="fa fa-power-off" style="color :#0D0E52;"></i> logout</a>
