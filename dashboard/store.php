@@ -8,7 +8,9 @@ include("header.php");
             <div class="col-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                    
+                  <h4 class="small" style="text-align:center;">Your Store Link is: <a href="" target="_blank" class="link" style="text-decoration: none;">https://<?php echo $store_row['store_name'] ?>.venormall.com</a>
+                    <button class="btn btn-primary copylink" style="display:inline-block;width:45px;margin:0%;padding:1%;"><i class="fa fa-copy" style="text-align:center;font-size:13px;"></i></button>
+                  </h4>
                     <button class="btn btn-primary me-2" onclick="document.getElementById('add_media_form').style.display = 'block'"><?php if($store_row['logo'] == ""){echo "Add";}else{echo "Update";} ?> store image
                     </button>
                     <br><br>
@@ -173,19 +175,19 @@ if(isset($_POST['add_image'])){
 }
 ?>
 <script>
-    var btn_copy = document.querySelector("#ref_copy").addEventListener("click", function() { 
+    var btn_copy = document.querySelector(".copylink").addEventListener("click", function() { 
         //alert(1)
         var copyText = document.createElement("textarea");
-        var text =document.getElementById("ref_code").innerText
+        var text =document.querySelector(".link").innerText
         copyText.value = text;
         document.body.appendChild(copyText);
         copyText.select();
         document.execCommand("copy");
         document.body.removeChild(copyText);
-        //alert("Copied: " + text);
-        document.getElementById("productmessage").innerText = "URL copied"
+        //alert("Referral Link Copied");
+        document.getElementById("productmessage").innerText = "Website Url copied. Share the link with your customers and start getting orders ASAP."
         showNotification()
-        setTimeout(closenotification,1000)
+        setTimeout(closenotification,3500)
     });
 </script>
   <!-- container-scroller -->
